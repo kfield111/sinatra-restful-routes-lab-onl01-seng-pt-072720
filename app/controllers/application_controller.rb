@@ -27,6 +27,11 @@ end
     erb :show
   end
 
+  get '/recipes/:id/edit' do
+    @recipe = Recipe.find_by_id(params[:id])
+    erb :edit
+  end
+
   delete '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.delete
